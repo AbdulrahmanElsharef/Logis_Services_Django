@@ -5,13 +5,16 @@ services:
         -description
         -image_ser
         _image_det
+        slug
 -conditions:
         service
         conditione
+
+
 -last_services
             -title
             -subtitle
-
+        -   -description
 
 about_us:
         -description
@@ -19,6 +22,8 @@ about_us:
 -last_services
             -title
             -subtitle
+
+
 OUR_TEAM:
         -name
         -job
@@ -28,13 +33,16 @@ OUR_TEAM:
         -instagram
         -linkedin
 
+
 -Pricing:
         plan_name
         price
 
+
 pricing_offer:
         plane_name
         offers
+
 
 review:
         -name
@@ -42,6 +50,7 @@ review:
         -image
         -rate
         review
+
 
 FREQUENTLY ASKED
         -ask
