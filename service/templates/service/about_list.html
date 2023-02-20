@@ -1,0 +1,99 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/page-header.jpg');">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2>About</h2>
+                    <p>Logis Shipping Service</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="container">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li>About Us</li>
+            </ol>
+        </div>
+    </nav>
+</div><!-- End Breadcrumbs -->
+
+<!-- ======= About Us Section ======= -->
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+            {%for item in object_list%}
+            <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
+                <img src="{{item.image.url}}" class="img-fluid" alt="">
+                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+            </div>
+            <div class="col-lg-6 content order-last  order-lg-first">
+                <h3>About Us</h3>
+                <p>
+                    {{item.about_us}}
+                </p>
+                <ul>
+                    {%for item in services%}
+                    <li data-aos="fade-up" data-aos-delay="100">
+                        <i class="bi bi-diagram-3"></i>
+                        <div>
+                            <h5>{{item.name}}</h5>
+                            <p>{{item.title}}</p>
+                        </div>
+                    </li>
+                    {%endfor%}
+                </ul>
+            </div>
+            {%endfor%}
+        </div>
+
+    </div>
+</section><!-- End About Us Section -->
+
+<!-- ======= Stats Counter Section ======= -->
+<section id="stats-counter" class="stats-counter pt-0">
+    <div class="container" data-aos="fade-up">
+
+
+    </div>
+</section><!-- End Stats Counter Section -->
+
+<!-- ======= Our Team Section ======= -->
+<section id="team" class="team pt-0">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+            <span>Our Team</span>
+            <h2>Our Team</h2>
+
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+            {%for member in teams %}
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="member">
+                    <img src="{{member.image.url}}" class="img-fluid" alt="">
+                    <div class="member-content">
+                        <h4>{{member.name}}</h4>
+                        <span>{{member.job}}</span>
+                        <p>
+                            {{member.job_info}}
+                        </p>
+                        <div class="social">
+                            <a href="{{member.facebook}}"><i class="bi bi-facebook"></i></a>
+                            <a href="{{member.instagram}}"><i class="bi bi-instagram"></i></a>
+                            <a href="{{member.linkedin}}"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Team Member -->
+            {%endfor%}
+        </div>
+
+    </div>
+</section>
+{%endblock%}

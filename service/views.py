@@ -15,3 +15,16 @@ class ServiceList(ListView):
 class ServiceDetail(DetailView):
     model = Service
     context_object_name = 'object'
+
+
+class AboutList(ListView):
+    model = About
+    extra_context = {
+
+        'services': Service.objects.all(),
+        'teams': OurTeam.objects.all(),
+    }
+
+
+class PricingList(ListView):
+    model = Pricing
