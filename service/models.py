@@ -31,8 +31,11 @@ class Condition(models.Model):
        
 class LastService(models.Model):
     service=models.ForeignKey(Service, related_name='Last_Service', on_delete=models.CASCADE)
+    title = models.CharField(max_length = 150)
     subtitle=models.TextField(max_length=300)
     description = models.TextField(max_length=5000)
+    image = models.ImageField(upload_to='LastService')
+    
     
     def __str__(self):
         return str(self.service)
