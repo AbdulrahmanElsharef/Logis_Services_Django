@@ -2,7 +2,7 @@ from django.shortcuts import render
 from . models import *
 
 # Create your views here.
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 
 class ServiceList(ListView):
@@ -10,3 +10,8 @@ class ServiceList(ListView):
     extra_context = {
         'lasts': LastService.objects.all(),
     }
+
+
+class ServiceDetail(DetailView):
+    model = Service
+    context_object_name = 'object'

@@ -70,7 +70,7 @@
             <div class="card-img">
               <img src="{{item.ser_image.url}}" alt="" class="img-fluid">
             </div>
-            <h3><a href="service-details.html" class="stretched-link">{{item}}</a></h3>
+            <h3><a href="{% url 'services:Service_detail' item.slug %}" class="stretched-link">{{item}}</a></h3>
             <p>{{item.subtitle}}</p>
           </div>
         </div><!-- End Card Item -->
