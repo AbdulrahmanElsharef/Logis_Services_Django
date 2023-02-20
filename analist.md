@@ -45,9 +45,6 @@ pricing_offer:
 
 
 review:
-        -name
-        -job
-        -image
         -rate
         review
 
