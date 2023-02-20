@@ -56,7 +56,7 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="{% url 'services:home'  %}" class="active">Home</a></li>
           <li><a href="{% url 'services:about_list'  %}">About</a></li>
           <li><a href="{% url 'services:Service_list'  %}">Services</a></li>
           <li><a href="{% url 'services:pricing_list'  %}">Pricing</a></li>
