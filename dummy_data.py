@@ -68,12 +68,23 @@ def seed_Review(n):
             review=fake.text(max_nb_chars=500) ,
         )
     print(f'{n} Review Seeded')
+    
+def seed_FaqAsked(n):
+    fake=Faker()
+    for x in range(n):
+        FaqAsked.objects.create(
+        ask=fake.text(max_nb_chars=50),
+        answer=fake.text(max_nb_chars=300),        )
+    print(f'{n} FaqAsked Seeded')
 
+
+
+seed_FaqAsked(15)
 # seed_service(25)
-seed_Condition(50)
+# seed_Condition(50)
 # seed_LastService(25)
 # seed_team(20)
-seed_Review(50)
+# seed_Review(50)
 # def seed_product(n):
 #     fake = Faker()
 #     images = ['2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpeg','9.jpg','10.jpg','11.png','12.png','13.jpeg','14.jpeg']
