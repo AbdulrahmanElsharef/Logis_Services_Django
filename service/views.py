@@ -33,22 +33,10 @@ class PricingList(ListView):
     }
 
 
-# class HomeList(ListView):
-
-#     extra_context = {
-#         'services': Service.objects.all(),
-#         'teams': OurTeam.objects.all(),
-#         'last': LastService.objects.all(),
-#         'about': About.objects.all(),
-#         'team': OurTeam.objects.all(),
-#         'plane': Pricing.objects.all(),
-#         'review': Review.objects.all(),
-#         'ask': FaqAsked.objects.all(),
-#         'offer': Offer.objects.all(),
-#     }
-
-def Home(request):
-    context = {
+class HomeList(ListView):
+    model = Service
+    template_name='service/home.html'
+    extra_context = {
         'services': Service.objects.all(),
         'teams': OurTeam.objects.all(),
         'last': LastService.objects.all(),
@@ -59,4 +47,17 @@ def Home(request):
         'ask': FaqAsked.objects.all(),
         'offer': Offer.objects.all(),
     }
-    return render(request,'home.html',context)
+
+# def Home(request):
+#     context = {
+#         'services': Service.objects.all(),
+#         'teams': OurTeam.objects.all(),
+#         'last': LastService.objects.all(),
+#         'about': About.objects.all(),
+#         'team': OurTeam.objects.all(),
+#         'plane': Pricing.objects.all(),
+#         'review': Review.objects.all(),
+#         'ask': FaqAsked.objects.all(),
+#         'offer': Offer.objects.all(),
+#     }
+#     return render(request,'home.html',context)

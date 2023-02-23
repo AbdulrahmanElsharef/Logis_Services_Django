@@ -5,7 +5,7 @@ from .views import *
 app_name = 'service'
 
 urlpatterns = [
-    path('', Home, name='home'),
+    path('', HomeList.as_view(), name='home'),
     path('Services/', ServiceList.as_view(), name='Service_list'),
     path('about/', AboutList.as_view(), name='about_list'),
     path('pricing/', PricingList.as_view(), name='pricing_list'),
