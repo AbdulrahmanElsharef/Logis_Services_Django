@@ -31,7 +31,7 @@
                 <div class="col-lg-4">
                     <div class="services-list">
                         {%if object.name%}
-                        <a  class="active">{{object}}</a>
+                        <a class="active">{{object}}</a>
                         {%endif%}
                     </div>
                 </div>
@@ -52,6 +52,26 @@
                     </p>
                 </div>
             </div>
+        </div>
+        <div class="section-header">
+            <span>Related Services</span>
+            <h2>Related Services</h2>
+            {%for item in object.Last_Service.all %}
+            <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
+                <div class="col-md-5 order-1 order-md-2">
+                    <img src="{{item.image.url}}" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7 order-2 order-md-1">
+                    <h2>{{item.title}}</h2>
+                    <h5 class="fst-italic">
+                        {{item.subtitle}}
+                    </h5>
+                    <p>
+                        {{item.description}}
+                    </p>
+                </div>
+            </div><!-- Features Item -->
+            {%endfor%}
         </div>
     </section><!-- End Service Details Section -->
 
