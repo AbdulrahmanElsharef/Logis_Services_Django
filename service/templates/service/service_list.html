@@ -84,29 +84,42 @@
   <!-- ======= Features Section ======= -->
   <section id="features" class="features">
     <div class="container">
-      <div class="section-header">
-        <span>Last Services</span>
-        <h2>Last Services</h2>
 
-      </div>
+      <div class="row">
+        <div class="col-lg-12">
+            <div class="bottom-paginate">
+                <p class="page-info">Showing 50 of {{all_count}} Results</p>
+                <ul class="pagination">
+                    
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{page_obj.previous_page_number}}">
+                                <i class="fas fa-long-arrow-alt-left"></i>
+                            </a>
+                        </li>                                           
+                    {% endif %} 
+                        
 
-      {%for item in lasts %}
-      <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
-        <div class="col-md-5 order-1 order-md-2">
-          <img src="{{item.image.url}}" class="img-fluid" alt="">
+
+                    <li class="page-item"><a class="page-link active" style="width:130px; border-radius:10px" href="#">
+                        Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+                    </a></li>
+
+
+                    
+                    {% if page_obj.has_next %}
+                     <li class="page-item">
+                        <a class="page-link" href="?page={{page_obj.next_page_number}}">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                     </li>
+                    {% endif %}
+                        
+
+                </ul>
+            </div>
         </div>
-        <div class="col-md-7 order-2 order-md-1">
-          <h2>{{item.title}}</h2>
-          <h5 class="fst-italic">
-            {{item.subtitle}}
-          </h5>
-          <p>
-            {{item.description}}
-          </p>
-        </div>
-      </div><!-- Features Item -->
-      {%endfor%}
-
+    </div>
     </div>
   </section><!-- End Features Section -->
 

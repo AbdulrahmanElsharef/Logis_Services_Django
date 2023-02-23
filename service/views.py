@@ -7,13 +7,12 @@ from django.views.generic import ListView, DetailView
 
 class ServiceList(ListView):
     model = Service
-    extra_context = {
-        'lasts': LastService.objects.all(),
-    }
+    paginate_by = 15
+
 
 class LastServiceList(ListView):
     model = LastService
-
+    paginate_by = 5
 
 
 class ServiceDetail(DetailView):
@@ -22,10 +21,11 @@ class ServiceDetail(DetailView):
 
 
 class AboutList(ListView):
-    model = About
+    model = OurTeam
+    paginate_by = 6
     extra_context = {
         'services': Service.objects.all(),
-        'teams': OurTeam.objects.all(),
+        'about': About.objects.all(),
     }
 
 
@@ -40,7 +40,7 @@ class PricingList(ListView):
 class HomeList(ListView):
     model = Service
     paginate_by = 6
-    template_name='service/home.html'
+    template_name = 'service/home.html'
     extra_context = {
         'services': Service.objects.all(),
         'teams': OurTeam.objects.all(),
