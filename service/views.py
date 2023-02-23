@@ -11,6 +11,10 @@ class ServiceList(ListView):
         'lasts': LastService.objects.all(),
     }
 
+class LastServiceList(ListView):
+    model = LastService
+
+
 
 class ServiceDetail(DetailView):
     model = Service
@@ -35,6 +39,7 @@ class PricingList(ListView):
 
 class HomeList(ListView):
     model = Service
+    paginate_by = 6
     template_name='service/home.html'
     extra_context = {
         'services': Service.objects.all(),

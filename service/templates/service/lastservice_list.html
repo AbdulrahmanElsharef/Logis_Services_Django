@@ -10,7 +10,7 @@
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
-            <h2>Services</h2>
+            <h2>Last Services</h2>
             <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a
               odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum
               dolorem.</p>
@@ -22,7 +22,7 @@
       <div class="container">
         <ol>
           <li><a href="{% url 'services:home'  %}">Home</a></li>
-          <li>Services</li>
+          <li>Last Services</li>
         </ol>
       </div>
     </nav>
@@ -58,24 +58,12 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-header">
-        <span>Our Services</span>
-        <h2>Our Services</h2>
+        <span>Last Services</span>
+        <h2>Last Services</h2>
 
       </div>
 
-      <div class="row gy-4">
-        {% for item in object_list %}
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="card">
-            <div class="card-img">
-              <img src="{{item.ser_image.url}}" alt="" class="img-fluid">
-            </div>
-            <h3><a href="{% url 'services:Service_detail' item.slug %}" class="stretched-link">{{item}}</a></h3>
-            <p>{{item.subtitle}}</p>
-          </div>
-        </div><!-- End Card Item -->
-        {% endfor %}
-      </div>
+
 
     </div>
   </section><!-- End Services Section -->
@@ -90,7 +78,7 @@
 
       </div>
 
-      {%for item in lasts %}
+      {%for item in object_list %}
       <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
         <div class="col-md-5 order-1 order-md-2">
           <img src="{{item.image.url}}" class="img-fluid" alt="">
