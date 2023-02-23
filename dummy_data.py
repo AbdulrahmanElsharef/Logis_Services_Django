@@ -28,7 +28,7 @@ def seed_Condition(n):
     for x in range(n):
        Condition.objects.create(
           conditione=fake.text(max_nb_chars=150),
-          service=Service.objects.get(id=random.randint(1,25))
+          service=Service.objects.get(id=random.randint(1,49))
         )
     print(f'{n} Condition Seeded')
        
@@ -38,7 +38,7 @@ def seed_LastService(n):
 
     for x in range(n):
        LastService.objects.create(
-            service=Service.objects.get(id=random.randint(1,25)),
+            service=Service.objects.get(id=random.randint(1,49)),
             title=fake.text(max_nb_chars=50) ,
             subtitle=fake.text(max_nb_chars=200) ,
             description=fake.text(max_nb_chars=1000) ,
@@ -63,17 +63,17 @@ def seed_Review(n):
     fake=Faker()
     for x in range(n):
        Review.objects.create(
-            service=Service.objects.get(id=random.randint(1,25)),
+            service=Service.objects.get(id=random.randint(1,49)),
             rate=random.randint(1,5) ,
             review=fake.text(max_nb_chars=500) ,
         )
     print(f'{n} Review Seeded')
 
 # seed_service(25)
-# seed_Condition(75)
-seed_LastService(25)
-seed_team(20)
-seed_Review(75)
+seed_Condition(50)
+# seed_LastService(25)
+# seed_team(20)
+seed_Review(50)
 # def seed_product(n):
 #     fake = Faker()
 #     images = ['2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpeg','9.jpg','10.jpg','11.png','12.png','13.jpeg','14.jpeg']
