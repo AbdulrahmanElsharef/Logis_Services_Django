@@ -8,11 +8,17 @@ from django.views.generic import ListView, DetailView
 class ServiceList(ListView):
     model = Service
     paginate_by = 15
+    extra_context = {
+        'all': Service.objects.all().count(),
+    }
 
 
 class LastServiceList(ListView):
     model = LastService
     paginate_by = 5
+    extra_context = {
+        'all': LastService.objects.all().count(),
+    }
 
 
 class ServiceDetail(DetailView):
@@ -26,6 +32,7 @@ class AboutList(ListView):
     extra_context = {
         'services': Service.objects.all(),
         'about': About.objects.all(),
+        'all': OurTeam.objects.all().count(),
     }
 
 
