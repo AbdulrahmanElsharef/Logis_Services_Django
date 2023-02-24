@@ -1,0 +1,51 @@
+{%extends 'base.html'%}
+{%load static%}
+{% load bootstrap5 %}
+{%block body%}
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs">
+  <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/page-header.jpg');">
+    <div class="container position-relative">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h2>Get a Quote</h2>
+          <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a
+            odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="container">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Get a Quote</li>
+      </ol>
+    </div>
+  </nav>
+</div><!-- End Breadcrumbs -->
+
+<!-- ======= Get a Quote Section ======= -->
+<section id="get-a-quote" class="get-a-quote">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row g-0">
+
+      <div class="col-lg-5 quote-bg" style="background-image: url({% static 'assets/img/quote-bg.jpg' %});"></div>
+
+      <div class="col-lg-7">
+
+        <form method="post" role="form">
+          {% csrf_token %}
+          {% bootstrap_form form_quote %}
+          <div class="text-center"><button>Get A Quote</button></div>
+        </form>
+
+      </div><!-- End Quote Form -->
+
+    </div>
+
+  </div>
+</section><!- </main><!-- End #main -->
+  {%endblock%}
